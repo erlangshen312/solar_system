@@ -21,8 +21,9 @@ public class Database extends SQLiteOpenHelper {
             "CREATE TABLE sql_planets (" +
                     " id INTEGER PRIMARY KEY autoincrement," +
                     " name varchar(256), " +
-                    " note varchar(2000), " +
-                    " image varchar(256)" +
+                    " note varchar(256), " +
+                    " image varchar(256)," +
+                    " description varchar(5000)" +
                     " )";
 
     public Database(Context context) {
@@ -34,11 +35,10 @@ public class Database extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
         db.execSQL(SQL_PLANETS);
 
-        db.execSQL("insert into sql_planets(id, name, note, image) values" +
-                "(1, 'Earth' , 'Here will be a lot of information about this planet', 'logo.png' ), " +
-                "(2, 'Jupiter' , 'Here will be a lot of information about this planet', 'logo.png' ), " +
-                "(3, 'Mars' , 'Here will be a lot of information about this planet', 'logo.png') "
-
+        db.execSQL("insert into sql_planets(id, name, note, image, description) values" +
+                "(1, 'Earth' , 'Here will be a lot of information about this planet', 'logo.png' , 'AAAAAAAAAAAAAAAAAAAAAA'), " +
+                "(2, 'Jupiter' , 'Here will be a lot of information about this planet', 'logo.png' , 'BBBBBBBBBBBBBBBBBBBBBBBBB'), " +
+                "(3, 'Mars' , 'Here will be a lot of information about this planet', 'logo.png', 'CCCCCCCCCCCCCCCCCCCCCCC') "
         );
     }
 
@@ -64,6 +64,25 @@ public class Database extends SQLiteOpenHelper {
             } while (c.moveToNext());
         }
         return planets;
+    }
+
+    public Planets getPlanet(int planet_id) {
+        String selectQuery = "SELECT id, name, note, description, image FROM sql_planets  where id = " + planet_id + " order by id";
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor c = db.rawQuery(selectQuery, null);
+        // looping through all rows and adding to list
+        Planets planet = null;
+        if (c.moveToFirst()) {
+            do {
+                planet = new Planets();
+                planet.setId(c.getInt(c.getColumnIndex("id")));
+                planet.setName(c.getString(c.getColumnIndex("name")));
+                planet.setNote(c.getString(c.getColumnIndex("note")));
+                planet.setImage(c.getString(c.getColumnIndex("image")));
+                planet.setDescription(c.getString(c.getColumnIndex("description")));
+            } while (c.moveToNext());
+        }
+        return planet;
     }
 
 }

@@ -9,6 +9,7 @@ public class Planets {
     private int id;
     private String name;
     private String note;
+    private String description;
     private String image;
 
     //constructor
@@ -47,5 +48,13 @@ public class Planets {
 
     public void setImage(String image) {
         this.image = image;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 }

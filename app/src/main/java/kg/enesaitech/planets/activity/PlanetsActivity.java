@@ -2,7 +2,6 @@ package kg.enesaitech.planets.activity;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -41,19 +40,13 @@ public class PlanetsActivity extends Activity {
                @Override
                public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
-                   Toast.makeText(PlanetsActivity.this, "ID" + id, Toast.LENGTH_LONG).show();
-
-//                   if (planet.get(position).getLocked() == 1) {
-//                       Toast.makeText(TestListActivity.this, "Sorry this is disabled", Toast.LENGTH_LONG).show();
-//                   } else {
-//                       int test_id = tests.get(position).getId();
-//                       String test_name = tests.get(position).getName();
-//                       intent = new Intent(TestListActivity.this, AnswerActivity.class);
-//                       intent.putExtra("test_id", test_id);
-//                       Log.i("BUNDLE*******", "You clicked Item: " + test_id + " " + test_name);
-//                       Toast.makeText(TestListActivity.this, "Сиз " + test_name + " дегенди тандадыныз", Toast.LENGTH_LONG).show();
-//                       startActivity(intent);
-//                   }
+                   int planet_id = planet.get(position).getId();
+                   String planet_name = planet.get(position).getName();
+                   Intent intent = new Intent(PlanetsActivity.this, DetailActivity.class);
+                   intent.putExtra("planet_id", planet_id);
+                   Log.i("BUNDLE*******", "You clicked Item: " + planet_id + " " + planet_name);
+                   Toast.makeText(PlanetsActivity.this, "You choose: " + planet_name , Toast.LENGTH_LONG).show();
+                   startActivity(intent);
 
 
                }
