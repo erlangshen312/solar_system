@@ -3,6 +3,7 @@ package kg.enesaitech.planets.activity;
 import android.app.Activity;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -13,6 +14,7 @@ import kg.enesaitech.planets.db.Planets;
 public class DetailActivity extends Activity {
 
     TextView nameTV, noteTV, descriptionTV;
+    ImageView imageIV;
 
     int planet_id;
     Database db = new Database(this);
