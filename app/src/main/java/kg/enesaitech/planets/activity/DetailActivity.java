@@ -15,6 +15,7 @@ public class DetailActivity extends Activity {
 
     TextView nameTV, noteTV, descriptionTV;
     ImageView imageIV;
+    Activity activity;
 
     int planet_id;
     Database db = new Database(this);
@@ -27,6 +28,7 @@ public class DetailActivity extends Activity {
         nameTV = findViewById(R.id.name_of_planet_detail);
         noteTV = findViewById(R.id.note_of_planet_detail);
         descriptionTV = findViewById(R.id.description_of_planet_detail);
+        imageIV = findViewById(R.id.image_of_planet_detail);
 
         Bundle bundle = getIntent().getExtras();
         if (bundle == null) {
@@ -40,6 +42,8 @@ public class DetailActivity extends Activity {
         nameTV.setText(planet.getName());
         noteTV.setText(planet.getNote());
         descriptionTV.setText(planet.getDescription());
+//        int id = activity.getResources().getIdentifier(planet.getImage(), "drawable", planet.getImage());
+//        imageIV.setImageResource(id);
 
     }
 }
