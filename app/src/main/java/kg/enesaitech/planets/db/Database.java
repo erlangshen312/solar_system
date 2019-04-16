@@ -36,9 +36,9 @@ public class Database extends SQLiteOpenHelper {
         db.execSQL(SQL_PLANETS);
 
         db.execSQL("insert into sql_planets(id, name, note, image, description) values" +
-                "(1, 'Earth' , 'Here will be a lot of information about this planet', 'logo.png' , 'AAAAAAAAAAAAAAAAAAAAAA'), " +
-                "(2, 'Jupiter' , 'Here will be a lot of information about this planet', 'logo.png' , 'BBBBBBBBBBBBBBBBBBBBBBBBB'), " +
-                "(3, 'Mars' , 'Here will be a lot of information about this planet', 'logo.png', 'CCCCCCCCCCCCCCCCCCCCCCC') "
+                "(1, 'Earth' , 'Here will be a lot of information about this planet', 'earth' , 'AAAAAAAAAAAAAAAAAAAAAA'), " +
+                "(2, 'Jupiter' , 'Here will be a lot of information about this planet', 'jupiter' , 'BBBBBBBBBBBBBBBBBBBBBBBBB'), " +
+                "(3, 'Mars' , 'Here will be a lot of information about this planet', 'mars', 'CCCCCCCCCCCCCCCCCCCCCCC') "
         );
     }
 
