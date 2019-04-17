@@ -44,6 +44,7 @@ public class PlanetsActivity extends Activity {
                    String planet_name = planet.get(position).getName();
                    Intent intent = new Intent(PlanetsActivity.this, DetailActivity.class);
                    intent.putExtra("planet_id", planet_id);
+                   intent.putExtra("planet_name", planet_name);
                    Log.i("BUNDLE*******", "You clicked Item: " + planet_id + " " + planet_name);
                    Toast.makeText(PlanetsActivity.this, "You choose: " + planet_name , Toast.LENGTH_LONG).show();
                    startActivity(intent);

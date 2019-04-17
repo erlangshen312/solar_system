@@ -1,6 +1,9 @@
 package kg.enesaitech.planets.activity;
 
 import android.app.Activity;
+import android.content.Context;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.ImageView;
@@ -18,6 +21,7 @@ public class DetailActivity extends Activity {
     Activity activity;
 
     int planet_id;
+    String planet_name;
     Database db = new Database(this);
 
     @Override
@@ -32,12 +36,16 @@ public class DetailActivity extends Activity {
 
         Bundle bundle = getIntent().getExtras();
         if (bundle == null) {
-            Toast.makeText(DetailActivity.this, "Your bundle: " + bundle , Toast.LENGTH_LONG).show();
+            Toast.makeText(DetailActivity.this, "Your bundle: " + bundle, Toast.LENGTH_LONG).show();
             finish();
             return;
         }
         planet_id = bundle.getInt("planet_id");
+        planet_name = bundle.getString("planet_name");
         Planets planet = db.getPlanet(planet_id);
+
+
+
 
         nameTV.setText(planet.getName());
         noteTV.setText(planet.getNote());
@@ -46,4 +54,6 @@ public class DetailActivity extends Activity {
 //        imageIV.setImageResource(id);
 
     }
+
+
 }
