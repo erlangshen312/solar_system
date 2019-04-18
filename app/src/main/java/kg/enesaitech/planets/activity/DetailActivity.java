@@ -65,7 +65,7 @@ public class DetailActivity extends Activity {
                 @Override
                 public void onResponse(JSONObject responseData) {
                     try {
-                        if (responseData.getInt("result") == 0) {
+                        if (responseData.getInt("query") == 0) {
                             String query = responseData.getString("query");
                             Toast.makeText(DetailActivity.this, "RESPONSE" + query, Toast.LENGTH_LONG).show();
                         }
