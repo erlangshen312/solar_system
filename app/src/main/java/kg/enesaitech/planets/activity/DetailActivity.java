@@ -59,15 +59,17 @@ public class DetailActivity extends Activity {
     private void getInfoFromWiki() {
         JSONObject obj = new JSONObject();
         try {
-            obj.put("planet_name", planet_name);
+//            obj.put("planet_name", planet_name);
             Utils.GetInstance().sendRequest(this, "venus", null, false, new ResponseCallback() {
 
                 @Override
                 public void onResponse(JSONObject responseData) {
+                    Log.d("RESPONSE DATA " , "DATA" + responseData);
                     try {
-                        if (responseData.getInt("query") == 0) {
-                            String query = responseData.getString("query");
-                            Toast.makeText(DetailActivity.this, "RESPONSE" + query, Toast.LENGTH_LONG).show();
+                        if (responseData.getJSONObject("query").length() == 1) {
+                            String data = String.valueOf(responseData.getJSONObject("query").getJSONObject("pages").getString("extract"));
+                            descriptionTV.setText(data);
+                            Toast.makeText(DetailActivity.this, "RESPONSE" + data, Toast.LENGTH_LONG).show();
                         }
                     } catch (Exception e) {
                         Toast.makeText(DetailActivity.this, "ERROR", Toast.LENGTH_LONG).show();
