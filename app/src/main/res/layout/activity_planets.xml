@@ -4,14 +4,46 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="kg.enesaitech.planets.activity.PlanetsActivity">
+    android:background="#222222"
+    tools:context=".activity.PlanetsActivity">
+
+    <!-- The main content view -->
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar_main"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorBackground"
+        android:elevation="14dp"
+        app:subtitleTextColor="#FFFFFF"
+        app:titleTextColor="#FFFFFF"
+        tools:ignore="MissingConstraints">
+
+        <ImageButton
+            android:id="@+id/main_menu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_margin="10dp"
+            android:background="@color/colorBackground"
+            android:padding="5dp"
+            android:scrollbarSize="5dp"
+            android:src="@drawable/ic_menu_orange"
+            tools:layout_editor_absoluteX="388dp"
+            tools:layout_editor_absoluteY="18dp"
+            android:contentDescription="Menu button" />
+
+    </android.support.v7.widget.Toolbar>
 
     <ListView
         android:id="@+id/planets_list"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:layout_marginTop="55dp"
+        android:layout_marginBottom="50dp"
+        android:background="#F5202020"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
 </android.support.constraint.ConstraintLayout>

@@ -4,12 +4,24 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="kg.enesaitech.planets.activity.DetailActivity">
+    tools:context=".activity.DetailActivity">
+
+    <!-- The main content view -->
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar_detail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorBackground"
+        android:elevation="4dp">
+
+    </android.support.v7.widget.Toolbar>
 
     <ScrollView
         android:id="@+id/planet_scroll"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:layout_marginTop="55dp"
+        android:background="@color/colorBackground"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.444"
@@ -23,13 +35,258 @@
             android:orientation="vertical"
             android:padding="20dp">
 
+            <ImageView
+                android:id="@+id/image_second"
+                android:layout_width="match_parent"
+                android:layout_height="240dp"
+                android:paddingTop="0dp"
+                android:paddingBottom="0dp"
+                android:src="@drawable/ic_launcher_background" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="181dp"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/text_equatorial_diameter"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingBottom="10dp"
+                        android:text="Equatorial diameter"
+                        android:textStyle="bold"
+                        android:textSize="16sp"/>
+
+                    <TextView
+                        android:id="@+id/text_polar_diameter"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingBottom="10dp"
+                        android:text="Polar Diameter"
+                        android:textStyle="bold"
+                        android:textSize="16sp"/>
+
+                    <TextView
+                        android:id="@+id/text_diameter"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingBottom="10dp"
+                        android:text="Diameter"
+                        android:textStyle="bold"
+                        android:textSize="16sp"/>
+
+                    <TextView
+                        android:id="@+id/text_mass"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingBottom="10dp"
+                        android:text="Mass"
+                        android:textStyle="bold"
+                        android:textSize="16sp"/>
+
+                    <TextView
+                        android:id="@+id/text_moons"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingBottom="10dp"
+                        android:text="Moons"
+                        android:textStyle="bold"
+                        android:textSize="16sp"/>
+
+                    <TextView
+                        android:id="@+id/name_diameter_tv8"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingBottom="10dp"
+                        android:text="Orbit Distance"
+                        android:textStyle="bold"
+                        android:textSize="16sp"/>
+
+                    <TextView
+                        android:id="@+id/name_diameter_tv9"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingBottom="10dp"
+                        android:text="Orbit Period"
+                        android:textStyle="bold"
+                        android:textSize="16sp"/>
+
+                    <TextView
+                        android:id="@+id/name_diameter_tv10"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingBottom="10dp"
+                        android:text="Surface Temperature"
+                        android:textStyle="bold"
+                        android:textSize="16sp"/>
+
+                    <TextView
+                        android:id="@+id/name_diameter_tv"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingBottom="10dp"
+                        android:text="Effective Temperature"
+                        android:textStyle="bold"
+                        android:textSize="16sp"/>
+
+                    <TextView
+                        android:id="@+id/name_diameter_tv11"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingBottom="10dp"
+                        android:text="First Record"
+                        android:textStyle="bold"
+                        android:textSize="16sp"/>
+
+                    <TextView
+                        android:id="@+id/name_diameter_tv12"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingBottom="10dp"
+                        android:text="Recorded By"
+                        android:textStyle="bold"
+                        android:textSize="16sp"/>
+
+                    <TextView
+                        android:id="@+id/name_diameter_tv13"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingBottom="10dp"
+                        android:text="Rings "
+                        android:textStyle="bold"
+                        android:textSize="16sp"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/eq_diameter_tv"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:paddingBottom="10dp"
+                        android:textSize="16sp"
+                        android:text="Equatorial diameter" />
+
+                    <TextView
+                        android:id="@+id/p_diameter_tv"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:paddingBottom="10dp"
+                        android:textSize="16sp"
+                        android:text="Polar diameter" />
+
+                    <TextView
+                        android:id="@+id/diameter_tv"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:paddingBottom="10dp"
+                        android:textSize="16sp"
+                        android:text="Diameter" />
+
+                    <TextView
+                        android:id="@+id/mass_tv"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:paddingBottom="10dp"
+                        android:textSize="16sp"
+                        android:text="Mass" />
+
+                    <TextView
+                        android:id="@+id/moons_tv"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:paddingBottom="10dp"
+                        android:textSize="16sp"
+                        android:text="Moons" />
+
+                    <TextView
+                        android:id="@+id/orbit_distance_tv"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:paddingBottom="10dp"
+                        android:textSize="16sp"
+                        android:text="Orbit Distance " />
+
+                    <TextView
+                        android:id="@+id/orbit_period_tv"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:paddingBottom="10dp"
+                        android:textSize="16sp"
+                        android:text="Orbit Period" />
+
+                    <TextView
+                        android:id="@+id/surface_temp_tv"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:paddingBottom="10dp"
+                        android:textSize="16sp"
+                        android:text="Surface Temperature" />
+
+                    <TextView
+                        android:id="@+id/effective_temp_tv"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:paddingBottom="10dp"
+                        android:textSize="16sp"
+                        android:text="Effective Temperature" />
+
+                    <TextView
+                        android:id="@+id/first_record_tv"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:paddingBottom="10dp"
+                        android:textSize="16sp"
+                        android:text="First Record" />
+
+                    <TextView
+                        android:id="@+id/recorded_tv"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:paddingBottom="10dp"
+                        android:textSize="16sp"
+                        android:text="Recorded By" />
+
+                    <TextView
+                        android:id="@+id/rings_tv"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:paddingBottom="10dp"
+                        android:textSize="16sp"
+                        android:text="Rigns " />
+                </LinearLayout>
+
+            </LinearLayout>
+
             <TextView
-                android:id="@+id/name_of_planet_detail"
+                android:id="@+id/text_about"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
                 android:paddingBottom="10dp"
-                android:text="NAME"
-                android:textColor="@android:color/background_light"
+                android:text="About"
                 android:textSize="24sp"
                 android:textStyle="bold" />
 
@@ -37,23 +294,76 @@
                 android:id="@+id/note_of_planet_detail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:lineSpacingExtra="6sp"
                 android:paddingBottom="10dp"
-                android:text="NOTE" />
+                android:text="NOTE"
+                android:textSize="16sp" />
 
             <ImageView
-                android:id="@+id/image_of_planet_detail"
+                android:id="@+id/image_third"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:paddingBottom="20dp"
-                android:paddingTop="40dp"
+                android:layout_height="200dp"
+                android:paddingTop="0dp"
+                android:paddingBottom="0dp"
                 android:src="@drawable/ic_launcher_background" />
 
             <TextView
-                android:id="@+id/description_of_planet_detail"
+                android:id="@+id/text_quick_facts"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:paddingBottom="10dp"
+                android:text="Quick Facts"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/quick_facts_tv"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingBottom="10dp"
-                android:text="DESCRIPTION" />
+                android:lineSpacingExtra="6sp"
+                android:textSize="16sp"
+                android:text="Quick facts" />
+
+            <TextView
+                android:id="@+id/text_detailed_facts"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:paddingBottom="10dp"
+                android:text="Detailed Facts"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/detailed_facts_tv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="10dp"
+                android:lineSpacingExtra="6sp"
+                android:textSize="16sp"
+                android:text="Detailed Facts" />
+
+            <TextView
+                android:id="@+id/text_atmosphere_note"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:paddingBottom="10dp"
+                android:text="Atmosphere"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/atmosphere_tv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="10dp"
+                android:lineSpacingExtra="6sp"
+                android:textSize="16sp"
+                android:text="Atmosphere" />
+
         </LinearLayout>
     </ScrollView>
 </android.support.constraint.ConstraintLayout>

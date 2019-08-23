@@ -1,13 +1,15 @@
 package kg.enesaitech.planets.activity;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.ImageButton;
 import android.widget.ListView;
-import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import java.util.ArrayList;
 
@@ -16,7 +18,9 @@ import kg.enesaitech.planets.adapter.PlanetsAdapter;
 import kg.enesaitech.planets.db.Database;
 import kg.enesaitech.planets.db.Planets;
 
-public class PlanetsActivity extends Activity {
+import static android.webkit.ConsoleMessage.MessageLevel.LOG;
+
+public class PlanetsActivity extends AppCompatActivity {
 
     PlanetsAdapter planetsListAdapter;
     ArrayList<Planets> planet;
@@ -24,10 +28,27 @@ public class PlanetsActivity extends Activity {
 
     Database db = new Database(this);
 
+    private Toolbar toolbarMain;
+    private boolean isRunning = false;
+    private int count = 0;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_planets);
+
+        toolbarMain = findViewById(R.id.toolbar_main);
+        setSupportActionBar(toolbarMain);
+        getSupportActionBar().setTitle("Planets");
+
+        ImageButton imageB = findViewById(R.id.main_menu);
+        imageB.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intentMenu = new Intent(PlanetsActivity.this, MenuActivity.class);
+                startActivity(intentMenu);
+            }
+        });
 
         planetsListView = findViewById(R.id.planets_list);
         planet = db.getPlanets();
@@ -40,16 +61,10 @@ public class PlanetsActivity extends Activity {
                @Override
                public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
-                   int planet_id = planet.get(position).getId();
-                   String planet_name = planet.get(position).getName();
+                   int p_id = planet.get(position).getId();
                    Intent intent = new Intent(PlanetsActivity.this, DetailActivity.class);
-                   intent.putExtra("planet_id", planet_id);
-                   intent.putExtra("planet_name", planet_name);
-                   Log.i("BUNDLE*******", "You clicked Item: " + planet_id + " " + planet_name);
-                   Toast.makeText(PlanetsActivity.this, "You choose: " + planet_name , Toast.LENGTH_LONG).show();
+                   intent.putExtra("p_id", p_id);
                    startActivity(intent);
-
-
                }
            }
         );

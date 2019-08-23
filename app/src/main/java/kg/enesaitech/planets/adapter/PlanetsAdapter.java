@@ -1,15 +1,12 @@
 package kg.enesaitech.planets.adapter;
 
 import android.app.Activity;
-import android.content.Context;
-import android.graphics.drawable.Drawable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -54,27 +51,20 @@ public class PlanetsAdapter extends BaseAdapter {
             view = LayoutInflater.from(parent.getContext()).inflate(R.layout.adapter_planet_item, parent, false);
         }
 
-        TextView namePlanetTV = (TextView) view.findViewById(R.id.name_of_planet);
-        TextView notePlanetTV = (TextView) view.findViewById(R.id.note_of_planet);
+        TextView titlePlanetTV = (TextView) view.findViewById(R.id.name_of_planet);
+        TextView subtitlePlanetTV = (TextView) view.findViewById(R.id.subname_of_planet);
+        TextView planetTypeTV = (TextView) view.findViewById(R.id.planet_type);
         ImageView imagePlanetIV = (ImageView) view.findViewById(R.id.image_of_planet);
 
-        namePlanetTV.setText(planetsListAdapter.get(position).getName());
-        notePlanetTV.setText(planetsListAdapter.get(position).getNote());
+        titlePlanetTV.setText(planetsListAdapter.get(position).getName());
+        subtitlePlanetTV.setText(planetsListAdapter.get(position).getSubname());
+        planetTypeTV.setText(planetsListAdapter.get(position).getPlanet_type());
 
-//        int id = context.getResources().getIdentifier("yourpackagename:drawable/" + planetsListAdapter.get(position).getImage(), null, null);
-
-//        int id = getResources().getIdentifier("yourpackagename:drawable/" + StringGenerated, null, null);
-//        int id = view.getResources().getIdentifier(planetsListAdapter.get(position).getImage(),"Planets/drawable", planetsListAdapter.get(position).getImage());
-        int id = context.getResources().getIdentifier(planetsListAdapter.get(position).getImage(), "drawable", context.getPackageName());
-//        imagePlanetIV.setImageResource();
-//        Toast.makeText(PlanetsAdapter.this, "You choose: " +  planetsListAdapter.get(position).getImage() , Toast.LENGTH_LONG).show();
-        System.out.println("********************************" + planetsListAdapter.get(position).getImage());
+        int id = context.getResources().getIdentifier(planetsListAdapter.get(position).getMain_image(), "drawable", context.getPackageName());
+        System.out.println("********************************" + planetsListAdapter.get(position).getMain_image());
         System.out.println("***************ID***************" + id);
 
         imagePlanetIV.setImageResource(id);
-//        String image = planetsListAdapter.get(position).getImage();
-//        imagePlanetIV.setImageResource(R.drawable.image);
-//        imagePlanetIV.setImageDrawable(context.getPackageName());
         return view;
     }
 }
