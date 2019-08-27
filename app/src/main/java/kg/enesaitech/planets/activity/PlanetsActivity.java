@@ -2,14 +2,13 @@ package kg.enesaitech.planets.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ImageButton;
 import android.widget.ListView;
-
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
 
 import java.util.ArrayList;
 
@@ -17,8 +16,6 @@ import kg.enesaitech.planets.R;
 import kg.enesaitech.planets.adapter.PlanetsAdapter;
 import kg.enesaitech.planets.db.Database;
 import kg.enesaitech.planets.db.Planets;
-
-import static android.webkit.ConsoleMessage.MessageLevel.LOG;
 
 public class PlanetsActivity extends AppCompatActivity {
 
@@ -39,14 +36,14 @@ public class PlanetsActivity extends AppCompatActivity {
 
         toolbarMain = findViewById(R.id.toolbar_main);
         setSupportActionBar(toolbarMain);
-        getSupportActionBar().setTitle("Planets");
+        getSupportActionBar().setTitle(R.string.planets);
 
-        ImageButton imageB = findViewById(R.id.main_menu);
-        imageB.setOnClickListener(new View.OnClickListener() {
+        ImageButton imageButtonNextPage = findViewById(R.id.main_menu);
+        imageButtonNextPage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intentMenu = new Intent(PlanetsActivity.this, MenuActivity.class);
-                startActivity(intentMenu);
+                Intent openMenuIntent = new Intent(PlanetsActivity.this, MenuActivity.class);
+                startActivity(openMenuIntent);
             }
         });
 

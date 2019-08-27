@@ -2,6 +2,8 @@ package kg.enesaitech.planets.activity;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -10,10 +12,6 @@ import android.widget.Toast;
 import kg.enesaitech.planets.R;
 import kg.enesaitech.planets.db.Database;
 import kg.enesaitech.planets.db.Planets;
-
-
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
 
 public class DetailActivity extends AppCompatActivity {
 
@@ -40,8 +38,9 @@ public class DetailActivity extends AppCompatActivity {
             finish();
             return;
         }
-        planet_id = bundle.getInt("planet_id");
-        Planets planet = db.getPlanet(planet_id);
+
+        planet_id = bundle.getInt("planet_id"); //id
+        Planets planet = db.getPlanet(planet_id); //take from db one item by id
 
         toolbarDetail = (Toolbar) findViewById(R.id.toolbar_detail);
         setSupportActionBar(toolbarDetail);
@@ -113,42 +112,7 @@ public class DetailActivity extends AppCompatActivity {
         int image_third = this.getResources().getIdentifier("@drawable/" + planet.getThird_image(), null, this.getPackageName());
         secondImageIV.setImageResource(image_second);
         thirdImageIV.setImageResource(image_third);
-
-
-//        int id = activity.getResources().getIdentifier(planet.getImage(), "drawable", planet.getImage());
-//        imageIV.setImageResource(id);
-
     }
 
-//    private void getInfoFromWiki() {
-//        JSONObject obj = new JSONObject();
-//        try {
-////            obj.put("planet_name", planet_name);
-//            Utils.GetInstance().sendRequest(this, "venus", null, false, new ResponseCallback() {
-//
-//                @Override
-//                public void onResponse(JSONObject responseData) {
-//                    Log.d("RESPONSE DATA " , "DATA" + responseData);
-//                    try {
-//                        if (responseData.getJSONObject("query").length() == 1) {
-//                            String data = String.valueOf(responseData.getJSONObject("query").getJSONObject("pages").getString("extract"));
-//                            descriptionTV.setText(data);
-//                            Toast.makeText(DetailActivity.this, "RESPONSE" + data, Toast.LENGTH_LONG).show();
-//                        }
-//                    } catch (Exception e) {
-//                        Toast.makeText(DetailActivity.this, "ERROR", Toast.LENGTH_LONG).show();
-//                        e.printStackTrace();
-//                    }
-//                }
-//
-//                @Override
-//                public void onError(String error) {
-//                    Log.e("GET_TRANSFER_DATA", "ERROR : " + error);
-//                }
-//            });
-//        } catch (Exception e) {
-//            e.printStackTrace();
-//        }
-//    }
 
 }

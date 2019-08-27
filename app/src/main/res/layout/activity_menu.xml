@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".activity.MenuActivity">
 
     <!-- The main content view -->
@@ -23,9 +24,10 @@
             android:layout_gravity="end"
             android:layout_margin="10dp"
             android:background="@color/colorBackground"
+            android:contentDescription="@string/cancel_button"
             android:padding="5dp"
             android:scrollbarSize="5dp"
-            android:src="@drawable/ic_menu_close"
+            android:src="@drawable/ic_close_black"
             tools:layout_editor_absoluteX="388dp"
             tools:layout_editor_absoluteY="18dp" />
 
@@ -42,50 +44,40 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical" />
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/menu_about"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_marginTop="2dp"
+                android:background="@color/colorBackground"
+                android:text="@string/about"
+                android:textSize="20sp"
+                app:layout_constraintTop_toBottomOf="@+id/menu_share"
+                tools:layout_editor_absoluteX="0dp" />
+
+            <Button
+                android:id="@+id/menu_share"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_marginTop="2dp"
+                android:background="@color/colorBackground"
+                android:text="@string/share"
+                android:textSize="20sp"
+                app:layout_constraintTop_toBottomOf="@+id/menu_more"
+                tools:layout_editor_absoluteX="0dp" />
+
+            <Button
+                android:id="@+id/menu_more"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_marginTop="2dp"
+                android:background="@color/colorBackground"
+                android:text="@string/more"
+                android:textSize="20sp"
+                tools:layout_editor_absoluteX="0dp" />
+
+        </LinearLayout>
     </ScrollView>
-
-    <Button
-        android:id="@+id/menu_about"
-        android:layout_width="match_parent"
-        android:layout_height="150dp"
-        android:layout_marginTop="2dp"
-        android:background="@color/colorBackground"
-        android:text="Rating"
-        android:textSize="20sp"
-        app:layout_constraintTop_toBottomOf="@+id/menu_about4"
-        tools:layout_editor_absoluteX="0dp" />
-
-    <Button
-        android:id="@+id/menu_about4"
-        android:layout_width="match_parent"
-        android:layout_height="150dp"
-        android:layout_marginTop="2dp"
-        android:background="@color/colorBackground"
-        android:text="Support "
-        android:textSize="20sp"
-        app:layout_constraintTop_toBottomOf="@+id/menu_about3"
-        tools:layout_editor_absoluteX="0dp" />
-
-    <Button
-        android:id="@+id/menu_about3"
-        android:layout_width="match_parent"
-        android:layout_height="150dp"
-        android:layout_marginTop="2dp"
-        android:background="@color/colorBackground"
-        android:text="Advice"
-        android:textSize="20sp"
-        app:layout_constraintTop_toBottomOf="@+id/menu_about2"
-        tools:layout_editor_absoluteX="0dp" />
-
-    <Button
-        android:id="@+id/menu_about2"
-        android:layout_width="match_parent"
-        android:layout_height="150dp"
-        android:layout_marginTop="2dp"
-        android:background="@color/colorBackground"
-        android:text="About"
-        android:textSize="20sp"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar_main"
-        tools:layout_editor_absoluteX="-16dp" />
-</android.support.constraint.LinearLayout>
+</LinearLayout>

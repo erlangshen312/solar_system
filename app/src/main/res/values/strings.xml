@@ -1,4 +1,11 @@
 <resources>
     <string name="app_name">Planets</string>
     <!--<string name="app_name">Planets</string>-->
+    <string name="about">About</string>
+    <string name="share">Share</string>
+    <string name="more">More</string>
+    <string name="menu_button">Menu button</string>
+    <string name="cancel_button">Cancel button</string>
+    <string name="planets">Planets</string>
+    <string name="menu">Menu</string>
 </resources>

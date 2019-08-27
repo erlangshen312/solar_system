@@ -14,6 +14,10 @@
         android:layout_height="wrap_content"
         android:background="@color/colorBackground"
         android:elevation="14dp"
+        app:layout_constraintBottom_toTopOf="@+id/planets_list"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         app:subtitleTextColor="#FFFFFF"
         app:titleTextColor="#FFFFFF"
         tools:ignore="MissingConstraints">
@@ -25,12 +29,12 @@
             android:layout_gravity="end"
             android:layout_margin="10dp"
             android:background="@color/colorBackground"
+            android:contentDescription="@string/menu_button"
             android:padding="5dp"
             android:scrollbarSize="5dp"
-            android:src="@drawable/ic_menu_orange"
+            android:src="@drawable/ic_menu_black_24dp"
             tools:layout_editor_absoluteX="388dp"
-            tools:layout_editor_absoluteY="18dp"
-            android:contentDescription="Menu button" />
+            tools:layout_editor_absoluteY="18dp" />
 
     </android.support.v7.widget.Toolbar>
 

@@ -37,37 +37,6 @@ public class Planets {
     private String rings_note;
     private String atmosphere_note;
 
-//    id,
-//    title,
-//    subname,
-//    distance,
-//    light_time_from_sun,
-//    light_of_year,
-//    planet_type,
-//    note,
-//    description,
-//    main_image,
-//    second_image,
-//    third_image,
-//    diameter,
-//    equatorial_diameter,
-//    polar_diameter,
-//    mass,
-//    moons,
-//    orbit_distance,
-//    orbit_period,
-//    surface_temperature,
-//    effective_temperature,
-//    rings,
-//    recorded_date,
-//    recorded_by,
-//    discovery_date,
-//    discovery_by,
-//    quick_facts,
-//    detailed_facts,
-//    rings_note,
-//    atmosphere_note,
-
     //constructor
     public Planets(){
 
